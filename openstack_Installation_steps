@@ -1,0 +1,60 @@
+Openstack Installation procedure from DevStack.org
+
+1. Download Openstack packages from devstack.org using the following command:
+git clone https://github.com/openstack-dev/devstack.git
+2. Go to devstack director using cd devstack.
+3. Create a local.conf file that should look like the statements given below
+
+[[local|localrc]]
+HOST_IP=192.168.42.11 --------------- change this ip address to the host system in which you are installing the openstack.
+FLAT_INTERFACE=eth0
+FIXED_RANGE=10.4.128.0/20
+FIXED_NETWORK_SIZE=4096
+FLOATING_RANGE=192.168.42.128/25
+MULTI_HOST=1
+LOGFILE=/opt/stack/logs/stack.sh.log
+ADMIN_PASSWORD=labstack--------------------change these passwords
+MYSQL_PASSWORD=supersecret
+RABBIT_PASSWORD=supersecrete
+SERVICE_PASSWORD=supersecrete
+SERVICE_TOKEN=xyzpdqlazydog
+
+4. Now install the openstack with following command : ./stack.sh
+  This will lead to series of installation.
+
+ and finally the it wil give the dashboard ip address which will be the web based interface for the openstack cloud.
+ and login with admin/demo accounts which will be given after the installation in the commandline/terminal.
+
+this is what looks like after the completion of the openstack installation.
+horizon is the dashboard i.e. web based interface and the default user with passwords will be given.
+
+Horizon is now available at http://192.168.196.27/
+Keystone is serving at http://192.168.196.27:5000/v2.0/
+Examples on using novaclient command line is in exercise.sh
+The default users are: admin and demo
+The password: sit
+This is your host ip: 192.168.196.27
+
+
+after logging into the openstack dashboard go to the project which is at upperleft corner and click on compute tab and under that clic on
+access and security tab.
+In that security and access you will see security groups and keypairs.
+first create a keypairs by clicking on the create new keypair tab the keypair will be downloaed automatically.
+In security group you can add rules for access such all tcp and icmp and essentials like ssh, http and mysql.
+
+Now go to the Admin tab you wil see all the admin related tabs. there you can create your own flavor for the vm instance and you can upload 
+any cloud instance image or the operating system image in the images tab by clicking on create new image tab.
+
+Now go to project and click on instance, there you will see the instances created by you. if you have not created any it will show empty list.
+you can create instance by clicking create new instance, it will display a dialogue window and fill up the required fields.
+
+then click on launch tab which wil launch a instance.
+
+
+
+ 
+
+	
+
+
+																																														
