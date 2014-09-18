@@ -1,0 +1,35 @@
+Steps to create a repository in github.com.
+sign in with login credentials
+click on create new reposity(+)
+give a name for repository.
+download the repository to the host system using this command----git clone https://github.com/your_username/abc.git
+then copy or add files to that repository/directory.
+Now execute these commands to push the files to the github.
+cd abc
+git init
+git add *
+git commit -m "first commit"
+git push -u origin master
+--after this command it will ask your login credentials.
+
+to go the github.com/your_username/abc.git and you will see the files you just added in the repository.
+---------------------------------------------------------------------------------------------------------------------------------------
+
+to download the files to vm instances carry out these commands
+
+git clone https://github.com/your_username/abc.git
+cd abc-- go to abc directory
+ls --- list all files and you should see the files you added to repository.
+
+
+to upload the war file in tomcat7 server execute these commands
+
+mv your_project.war file /var/lib/tomcat7/webapps
+
+now restart the tomcat7 server using this command --- sudo service tomcat7 restart
+
+
+
+
+
+
